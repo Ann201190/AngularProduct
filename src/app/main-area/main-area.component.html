@@ -1,0 +1,33 @@
+<div>
+    <div class="row">
+        <div class="col-sm-4" style="margin: 20px;">
+            <app-addproduct (onAdd)="addProduct($event)"></app-addproduct>
+        </div>
+
+
+        <div class="col-sm-7" style="margin: 20px;">
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Наименование</th>
+                        <th scope="col">Описание</th>
+                        <th scope="col">Цена, шт/грн</th>
+                        <th scope="col">Действие</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let item of products">
+                        <td>{{item.title}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.price}}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="delProduct(item.id)"> Удалить</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
